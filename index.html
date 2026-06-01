@@ -8,7 +8,7 @@
     <meta name="description" content="Nascida do amor pela confeitaria artesanal. Conheça nossos doces gourmet feitos à mão com ingredientes premium e monte seu pedido.">
     <meta property="og:title" content="Cianela Doceria - Doces Feitos à Mão">
     <meta property="og:description" content="Nascida do amor pela confeitaria artesanal. Conheça nossos doces gourmet e faça seu pedido direto via WhatsApp.">
-    <meta property="og:image" content="capa.jpg">
+    <meta property="og:image" content="pastelninho.jpg">
     <meta property="og:url" content="https://cianeladoceria.com.br">
     <meta property="og:type" content="website">
 
@@ -17,7 +17,7 @@
       "@context": "https://schema.org",
       "@type": "Bakery",
       "name": "Cianela Doceria",
-      "image": "capa.jpg",
+      "image": "pastelninho.jpg",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -59,6 +59,7 @@
             --creme: #F7E6D9;
             --gold: #C79A63; 
             --soft-brown: #BA6A4F;
+            --white-pure: #FFFFFF;
             --white-creme: #FCF6F0;
             --dark-text: #2C1113;
             
@@ -78,7 +79,7 @@
 
         body {
             font-family: var(--font-body);
-            background-color: var(--white-creme);
+            background-color: var(--white-pure);
             color: var(--dark-text);
             line-height: 1.6;
             overflow-x: hidden;
@@ -92,15 +93,6 @@
 
         ul {
             list-style: none;
-        }
-
-        /* Padrão Xadrez Vichy em CSS Puro */
-        .bg-vichy {
-            background-color: #fcefe6;
-            background-image: 
-                linear-gradient(90deg, rgba(139, 30, 36, 0.04) 50%, transparent 50%),
-                linear-gradient(rgba(139, 30, 36, 0.04) 50%, transparent 50%);
-            background-size: 24px 24px;
         }
 
         /* Dividers Elegantes (Dourado / Bordeaux) */
@@ -127,9 +119,6 @@
         }
         .divider-heart-bordeaux {
             color: var(--bordeaux);
-        }
-        .divider-right {
-            margin: 15px 0;
         }
 
         /* ==========================================================================
@@ -214,41 +203,36 @@
         }
 
         /* ==========================================================================
-           4. SEÇÃO HERÓI
+           4. SECÇÃO HERÓI (LIMPA, PADRÃO BRANCO PREMIUM COM LOGO PURA)
            ========================================================================== */
         .hero {
             position: relative;
-            height: 580px;
-            background: linear-gradient(to right, rgba(44, 17, 19, 0) 40%, rgba(44, 17, 19, 0.95) 100%), 
-                        url('capa.jpg') no-repeat center center/cover;
+            padding: 90px 20px;
+            background-color: var(--white-pure);
             display: flex;
             align-items: center;
-            justify-content: flex-end;
-            padding: 0 8%;
+            justify-content: center;
+            text-align: center;
+            border-bottom: 1px solid rgba(139, 30, 36, 0.08);
         }
 
         .hero-content {
-            background-color: transparent; 
-            border: none;
-            box-shadow: none;
-            padding: 0;
-            max-width: 550px;
+            max-width: 700px;
             display: flex;
             flex-direction: column;
-            align-items: flex-end; 
-            text-align: right;
+            align-items: center;
+            justify-content: center;
             animation: fadeIn 1s ease-out;
         }
 
+        /* Logotipo puro e mesclado com o fundo */
         .hero-mini-logo {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            align-self: center; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
+            width: 160px; /* Tamanho ajustado para dar presença sem a borda */
+            height: auto;
+            margin-bottom: 25px;
             transition: transform 0.3s ease;
+            /* A propriedade abaixo remove fundos brancos de JPGs em fundos claros */
+            mix-blend-mode: multiply; 
         }
 
         .hero-mini-logo:hover {
@@ -257,25 +241,23 @@
 
         .hero h1 {
             font-family: var(--font-title);
-            color: var(--creme);
-            font-size: 45px;
+            color: var(--bordeaux);
+            font-size: 46px;
             font-weight: 700;
             margin-bottom: 5px;
             letter-spacing: 1px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); 
         }
 
         .hero p {
             font-family: var(--font-body);
-            color: var(--white-creme);
-            font-size: 19px;
+            color: var(--dark-text);
+            font-size: 20px;
             font-style: italic;
             margin-bottom: 35px;
             font-weight: 400;
-            opacity: 0.95;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
         }
 
+        /* Botão Dourado Premium */
         .btn-gold {
             display: inline-block;
             background-color: var(--gold);
@@ -284,11 +266,11 @@
             font-weight: 700;
             font-size: 14px;
             text-transform: uppercase;
-            padding: 15px 40px;
+            padding: 15px 45px;
             border-radius: 50px;
             border: 2px solid var(--gold);
             letter-spacing: 1.5px;
-            box-shadow: 0 4px 15px rgba(199, 154, 99, 0.4);
+            box-shadow: 0 4px 15px rgba(199, 154, 99, 0.3);
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -297,52 +279,28 @@
             background-color: transparent;
             color: var(--gold);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(199, 154, 99, 0.3);
+            box-shadow: 0 6px 20px rgba(199, 154, 99, 0.25);
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* ==========================================================================
-           5. SEÇÃO PRODUTOS (COM BANNERS COMO PAPEL DE PAREDE)
+           5. SECÇÃO PRODUTOS (TOTALMENTE BRANCA E LIMPA)
            ========================================================================== */
-        .products-super-wrapper {
-            display: flex;
-            width: 100%;
-            align-items: stretch; 
-            background-color: var(--white-creme);
-            overflow: hidden;
-        }
-
-        .side-banner-bg {
-            display: none; 
-            flex: 1; 
-            background-size: 100% 100%; 
-            background-position: top center;
-            background-repeat: no-repeat;
-        }
-
-        .side-banner-left {
-            background-image: url('lateral1.png');
-        }
-
-        .side-banner-right {
-            background-image: url('lateral2.png');
-        }
-
         .products-section {
             width: 100%;
             max-width: 1200px;
-            padding: 90px 20px;
-            margin: 0 auto; 
-            z-index: 1;
+            padding: 80px 20px;
+            margin: 0 auto;
+            background-color: var(--white-pure);
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
         }
 
         .section-header h2 {
@@ -355,15 +313,15 @@
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
+            gap: 40px;
         }
 
         .product-card {
-            background-color: #fff;
+            background-color: var(--white-pure);
             border-radius: 12px;
             border: 1px solid rgba(139, 30, 36, 0.1);
             overflow: hidden;
-            box-shadow: 0 8px 22px rgba(44, 17, 19, 0.05);
+            box-shadow: 0 6px 20px rgba(44, 17, 19, 0.04);
             display: flex;
             flex-direction: column;
             position: relative;
@@ -371,15 +329,16 @@
 
         .product-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 16px 30px rgba(139, 30, 36, 0.12);
+            box-shadow: 0 16px 30px rgba(139, 30, 36, 0.1);
             transition: all 0.4s ease;
         }
 
         .product-img-wrapper {
             position: relative;
-            height: 250px;
+            height: 260px;
             overflow: hidden;
             border-bottom: 3px solid var(--gold);
+            background-color: var(--white-creme);
         }
 
         .product-img {
@@ -390,10 +349,10 @@
         }
 
         .product-card:hover .product-img {
-            transform: scale(1.07);
+            transform: scale(1.06);
         }
 
-        /* Animação Crossfade para a Surpresa de Morango */
+        /* Animação Crossfade Inteligente para a Surpresa de Morango */
         .img-crossfade {
             position: absolute;
             top: 0;
@@ -446,11 +405,12 @@
             min-height: 45px;
         }
 
+        /* Variações de Sabores e Tamanhos */
         .product-variations {
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin: 10px 0 20px 0;
+            margin: 10px 0 25px 0;
             width: 100%;
             text-align: left;
         }
@@ -471,12 +431,12 @@
         .variation-select {
             width: 100%;
             padding: 10px 14px;
-            border: 1px solid rgba(139, 30, 36, 0.18);
+            border: 1px solid rgba(139, 30, 36, 0.15);
             border-radius: 25px; 
             font-family: var(--font-body);
             font-size: 13px;
             color: var(--dark-text);
-            background-color: var(--white-creme);
+            background-color: var(--white-pure);
             cursor: pointer;
             outline: none;
             transition: all 0.3s ease;
@@ -506,7 +466,7 @@
         .btn-card-order {
             display: block;
             width: 100%;
-            background-color: var(--white-creme);
+            background-color: var(--white-pure);
             color: var(--bordeaux);
             border: 2px solid var(--bordeaux);
             padding: 11px 25px;
@@ -524,15 +484,15 @@
             background-color: var(--gold);
             border-color: var(--gold);
             color: var(--bordeaux);
-            box-shadow: 0 4px 12px rgba(199, 154, 99, 0.3);
+            box-shadow: 0 4px 12px rgba(199, 154, 99, 0.2);
         }
 
         .btn-card-order:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
 
         /* ==========================================================================
-           6. SEÇÃO SOBRE NÓS
+           6. SECÇÃO SOBRE NÓS
            ========================================================================== */
         .about-section {
             background-color: var(--bordeaux);
@@ -602,9 +562,9 @@
             justify-content: center;
             font-size: 26px;
             cursor: pointer;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
             transition: transform 0.3s ease, background-color 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255,255,255,0.15);
         }
         .cart-floating-btn:hover {
             transform: scale(1.08);
@@ -633,8 +593,8 @@
             right: -400px;
             width: 400px;
             height: 100%;
-            background-color: var(--white-creme);
-            box-shadow: -6px 0 25px rgba(0,0,0,0.25);
+            background-color: var(--white-pure);
+            box-shadow: -6px 0 25px rgba(0,0,0,0.2);
             z-index: 2000;
             transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
@@ -692,7 +652,7 @@
             align-items: center;
             justify-content: space-between;
             padding-bottom: 15px;
-            border-bottom: 1px dashed rgba(139, 30, 36, 0.15);
+            border-bottom: 1px dashed rgba(139, 30, 36, 0.12);
         }
         .cart-item-details {
             flex-grow: 1;
@@ -785,7 +745,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(44, 17, 19, 0.5);
+            background-color: rgba(44, 17, 19, 0.4);
             z-index: 1999;
             opacity: 0;
             pointer-events: none;
@@ -866,12 +826,6 @@
         /* ==========================================================================
            9. RESPONSIVIDADE (MEDIA QUERIES)
            ========================================================================== */
-        @media (min-width: 1350px) {
-            .side-banner-bg {
-                display: block;
-            }
-        }
-
         @media (max-width: 768px) {
             .nav-container {
                 padding: 25px 20px;
@@ -901,21 +855,12 @@
             }
 
             .hero {
-                height: 480px;
-                background: linear-gradient(rgba(44, 17, 19, 0.75), rgba(44, 17, 19, 0.75)), 
-                            url('capa.jpg') no-repeat center center/cover;
-                justify-content: center;
-                padding: 0 20px;
-            }
-
-            .hero-content {
-                align-items: center;
-                text-align: center;
+                padding: 60px 20px;
             }
 
             .hero-mini-logo {
-                width: 90px;
-                height: 90px;
+                width: 120px;
+                margin-bottom: 20px;
             }
 
             .hero h1 {
@@ -924,10 +869,6 @@
 
             .hero p {
                 font-size: 16px;
-            }
-
-            .divider-right {
-                justify-content: center;
             }
 
             .cart-drawer {
@@ -979,9 +920,9 @@
 
     <section class="hero">
         <div class="hero-content">
-            <img src="logo.jpg" alt="Mini Logo Cianela" class="hero-mini-logo">
-            <h1>Pequenos detalhes,<br>GRANDES SABORES.</h1>
-            <div class="divider divider-right">
+            <img src="logo.jpg" alt="Logotipo Cianela" class="hero-mini-logo">
+            <h1>Pequenos detalhes, GRANDES SABORES.</h1>
+            <div class="divider">
                 <span class="divider-heart">❤</span>
             </div>
             <p>Doces feitos à mão, com amor em cada detalhe.</p>
@@ -989,242 +930,236 @@
         </div>
     </section>
 
-    <div class="products-super-wrapper">
-        
-        <div class="side-banner-bg side-banner-left"></div>
+    <section class="products-section" id="doces">
+        <div class="section-header">
+            <h2>Nossos Doces Gourmet</h2>
+            <div class="divider divider-bordeaux">
+                <span class="divider-heart divider-heart-bordeaux">❤</span>
+            </div>
+        </div>
 
-        <section class="products-section bg-vichy" id="doces">
-            <div class="section-header">
-                <h2>Nossos Doces Gourmet</h2>
-                <div class="divider divider-bordeaux">
-                    <span class="divider-heart divider-heart-bordeaux">❤</span>
+        <div class="product-grid">
+            
+            <div class="product-card" id="prod-1">
+                <div class="product-img-wrapper">
+                    <div class="card-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C79A63"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <img src="pastelninho.jpg" alt="Pastel de Leite Ninho" class="product-img" loading="lazy">
+                </div>
+                <div class="product-info-box">
+                    <h3 class="product-title">Pastel de Leite Ninho</h3>
+                    <p class="product-desc">Deliciosa massa aveludada purinha de Leite Ninho, recheada generosamente com recheios nobres cremosos.</p>
+                    
+                    <div class="product-variations">
+                        <div class="variation-field">
+                            <label>Escolha o Recheio</label>
+                            <select class="variation-select sabor">
+                                <option value="Nutella Tradicional">Nutella Tradicional</option>
+                                <option value="Brigadeiro de Chocolate">Brigadeiro de Chocolate</option>
+                                <option value="Doce de Leite Caseiro">Doce de Leite Caseiro</option>
+                            </select>
+                        </div>
+                        <div class="variation-field">
+                            <label>Opção / Tamanho</label>
+                            <select class="variation-select tamanho" onchange="alterarPrecoCard(this)">
+                                <option value="Unidade Padrão" data-price="14.00">Unidade Padrão — R$ 14,00</option>
+                                <option value="Combo c/ 3 unidades" data-price="38.00">Combo c/ 3 un. — R$ 38,00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="product-meta">
+                        <span class="product-price">R$ 14,00</span>
+                        <button class="btn-card-order" onclick="adicionarCardAoCarrinho('prod-1', 'Pastel de Leite Ninho')">Adicionar ao Pedido</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="product-grid">
-                
-                <div class="product-card" id="prod-1">
-                    <div class="product-img-wrapper">
-                        <div class="card-badge">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#C79A63"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                        </div>
-                        <img src="pastelninho.jpg" alt="Pastel de Leite Ninho" class="product-img" loading="lazy">
+            <div class="product-card" id="prod-2">
+                <div class="product-img-wrapper">
+                    <div class="card-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C79A63"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
                     </div>
-                    <div class="product-info-box">
-                        <h3 class="product-title">Pastel de Leite Ninho</h3>
-                        <p class="product-desc">Deliciosa massa aveludada purinha de Leite Ninho, recheada generosamente com recheios nobres cremosos.</p>
-                        
-                        <div class="product-variations">
-                            <div class="variation-field">
-                                <label>Escolha o Recheio</label>
-                                <select class="variation-select sabor">
-                                    <option value="Nutella Tradicional">Nutella Tradicional</option>
-                                    <option value="Brigadeiro de Chocolate">Brigadeiro de Chocolate</option>
-                                    <option value="Doce de Leite Caseiro">Doce de Leite Caseiro</option>
-                                </select>
-                            </div>
-                            <div class="variation-field">
-                                <label>Opção / Tamanho</label>
-                                <select class="variation-select tamanho" onchange="alterarPrecoCard(this)">
-                                    <option value="Unidade Padrão" data-price="14.00">Unidade Padrão — R$ 14,00</option>
-                                    <option value="Combo c/ 3 unidades" data-price="38.00">Combo c/ 3 un. — R$ 38,00</option>
-                                </select>
-                            </div>
+                    <img src="copodafelicidade.jpg" alt="Copo da Felicidade" class="product-img" loading="lazy">
+                </div>
+                <div class="product-info-box">
+                    <h3 class="product-title">Copo da Felicidade</h3>
+                    <p class="product-desc">Camadas irresistíveis de cremes nobres, pedaços de brownie artesanal, morangos frescos e raspas.</p>
+                    
+                    <div class="product-variations">
+                        <div class="variation-field">
+                            <label>Combinação de Sabores</label>
+                            <select class="variation-select sabor">
+                                <option value="Morango com Nutella">Morango com Nutella</option>
+                                <option value="Brownie com Laka / Ouro Branco">Brownie com Laka / Ouro Branco</option>
+                                <option value="Supremo Dois Amores">Supremo Dois Amores</option>
+                            </select>
                         </div>
+                        <div class="variation-field">
+                            <label>Tamanho do Copo</label>
+                            <select class="variation-select tamanho" onchange="alterarPrecoCard(this)">
+                                <option value="Copo Média 300ml" data-price="16.00">Média 300ml — R$ 16,00</option>
+                                <option value="Copo Grande 500ml" data-price="22.00">Grande 500ml — R$ 22,00</option>
+                            </select>
+                        </div>
+                    </div>
 
-                        <div class="product-meta">
-                            <span class="product-price">R$ 14,00</span>
-                            <button class="btn-card-order" onclick="adicionarCardAoCarrinho('prod-1', 'Pastel de Leite Ninho')">Adicionar ao Pedido</button>
-                        </div>
+                    <div class="product-meta">
+                        <span class="product-price">R$ 16,00</span>
+                        <button class="btn-card-order" onclick="document.getElementById('prod-2').scrollIntoView(); adicionarCardAoCarrinho('prod-2', 'Copo da Felicidade')">Adicionar ao Pedido</button>
                     </div>
                 </div>
-
-                <div class="product-card" id="prod-2">
-                    <div class="product-img-wrapper">
-                        <div class="card-badge">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#C79A63"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                        </div>
-                        <img src="copodafelicidade.jpg" alt="Copo da Felicidade" class="product-img" loading="lazy">
-                    </div>
-                    <div class="product-info-box">
-                        <h3 class="product-title">Copo da Felicidade</h3>
-                        <p class="product-desc">Camadas irresistíveis de cremes nobres, pedaços de brownie artesanal, morangos frescos e raspas.</p>
-                        
-                        <div class="product-variations">
-                            <div class="variation-field">
-                                <label>Combinação de Sabores</label>
-                                <select class="variation-select sabor">
-                                    <option value="Morango com Nutella">Morango com Nutella</option>
-                                    <option value="Brownie com Laka / Ouro Branco">Brownie com Laka / Ouro Branco</option>
-                                    <option value="Supremo Dois Amores">Supremo Dois Amores</option>
-                                </select>
-                            </div>
-                            <div class="variation-field">
-                                <label>Tamanho do Copo</label>
-                                <select class="variation-select tamanho" onchange="alterarPrecoCard(this)">
-                                    <option value="Copo Média 300ml" data-price="16.00">Média 300ml — R$ 16,00</option>
-                                    <option value="Copo Grande 500ml" data-price="22.00">Grande 500ml — R$ 22,00</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="product-meta">
-                            <span class="product-price">R$ 16,00</span>
-                            <button class="btn-card-order" onclick="document.getElementById('prod-2').scrollIntoView(); adicionarCardAoCarrinho('prod-2', 'Copo da Felicidade')">Adicionar ao Pedido</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" id="prod-3">
-                    <div class="product-img-wrapper">
-                        <div class="card-badge">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#C79A63"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                        </div>
-                        <img src="brownies.jpg" alt="Brownie Gourmet" class="product-img" loading="lazy">
-                    </div>
-                    <div class="product-info-box">
-                        <h3 class="product-title">Brownie Gourmet</h3>
-                        <p class="product-desc">Intenso sabor de chocolate, textura super cremosa por dentro e aquela casquinha craquelada perfeita por fora.</p>
-                        
-                        <div class="product-variations">
-                            <div class="variation-field">
-                                <label>Cobertura / Recheio</label>
-                                <select class="variation-select sabor">
-                                    <option value="Tradicional Puro">Tradicional Puro (Sem Recheio)</option>
-                                    <option value="Com Recheio de Nutella">Recheio de Nutella</option>
-                                    <option value="Com Recheio de Doce de Leite">Recheio de Doce de Leite</option>
-                                </select>
-                            </div>
-                            <div class="variation-field">
-                                <label>Porção / Embalagem</label>
-                                <select class="variation-select tamanho" onchange="alterarPrecoCard(this)">
-                                    <option value="Pedaço Individual" data-price="10.00">Pedaço Individual — R$ 10,00</option>
-                                    <option value="Caixa Presente c/ 4 un." data-price="42.00">Caixa Presente c/ 4 un. — R$ 42,00</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="product-meta">
-                            <span class="product-price">R$ 10,00</span>
-                            <button class="btn-card-order" onclick="adicionarCardAoCarrinho('prod-3', 'Brownie Gourmet')">Adicionar ao Pedido</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" id="prod-4">
-                    <div class="product-img-wrapper">
-                        <div class="card-badge">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#C79A63"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                        </div>
-                        <img src="bolodepote.jpg" alt="Bolo de Pote" class="product-img" loading="lazy">
-                    </div>
-                    <div class="product-info-box">
-                        <h3 class="product-title">Bolo de Pote</h3>
-                        <p class="product-desc">Massa super molhadinha intercalada com recheios artesanais cremosos de dar água na boca.</p>
-                        
-                        <div class="product-variations">
-                            <div class="variation-field">
-                                <label>Sabor do Bolo</label>
-                                <select class="variation-select sabor">
-                                    <option value="Ninho com Morango">Leite Ninho com Morango</option>
-                                    <option value="Cenoura com Brigadeiro">Cenoura com Brigadeiro</option>
-                                    <option value="Red Velvet Premium">Red Velvet Premium</option>
-                                </select>
-                            </div>
-                            <div class="variation-field">
-                                <label>Tamanho do Pote</label>
-                                <select class="variation-select tamanho" onchange="alterarPrecoCard(this)">
-                                    <option value="Pote Padrão 250g" data-price="12.00">Pote Padrão 250g — R$ 12,00</option>
-                                    <option value="Pote Família 400g" data-price="18.00">Pote Família 400g — R$ 18,00</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="product-meta">
-                            <span class="product-price">R$ 12,00</span>
-                            <button class="btn-card-order" onclick="adicionarCardAoCarrinho('prod-4', 'Bolo de Pote')">Adicionar ao Pedido</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" id="prod-5">
-                    <div class="product-img-wrapper">
-                        <div class="card-badge">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#C79A63"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                        </div>
-                        <img src="supresademorango2.jpg" alt="Surpresa de Morango" class="product-img" loading="lazy">
-                        <img src="surpresademorango1.jpg" alt="Surpresa de Morango" class="product-img img-crossfade" loading="lazy">
-                    </div>
-                    <div class="product-info-box">
-                        <h3 class="product-title">Surpresa de Morango</h3>
-                        <p class="product-desc">Um morango inteiro, fresco e suculento, envolto por um brigadeiro nobre e casquinha fina de chocolate.</p>
-                        
-                        <div class="product-variations">
-                            <div class="variation-field">
-                                <label>Massa Envolvente</label>
-                                <select class="variation-select sabor">
-                                    <option value="Massa de Leite Ninho">Massa Pura de Leite Ninho</option>
-                                    <option value="Massa de Brigadeiro Belga">Massa de Brigadeiro Tradicional Belga</option>
-                                </select>
-                            </div>
-                            <div class="variation-field">
-                                <label>Quantidade</label>
-                                <select class="variation-select tamanho" onchange="alterarPrecoCard(this)">
-                                    <option value="Unidade Especial" data-price="8.50">Unidade Especial — R$ 8,50</option>
-                                    <option value="Caixa c/ 4 unidades" data-price="32.00">Caixa Degustação c/ 4 un. — R$ 32,00</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="product-meta">
-                            <span class="product-price">R$ 8,50</span>
-                            <button class="btn-card-order" onclick="adicionarCardAoCarrinho('prod-5', 'Surpresa de Morango')">Adicionar ao Pedido</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="product-card" id="prod-6">
-                    <div class="product-img-wrapper">
-                        <div class="card-badge">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="#C79A63"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-                        </div>
-                        <img src="bombomaberto.jpg" alt="Bombom Aberto" class="product-img" loading="lazy">
-                    </div>
-                    <div class="product-info-box">
-                        <h3 class="product-title">Bombom Aberto</h3>
-                        <p class="product-desc">A sofisticação servida na taça: creme belga aveludado, frutas frescas fatiadas e ganache artesanal de chocolate nobre puro.</p>
-                        
-                        <div class="product-variations">
-                            <div class="variation-field">
-                                <label>Fruta Selecionada</label>
-                                <select class="variation-select sabor">
-                                    <option value="Morangos Frescos">Morangos Frescos</option>
-                                    <option value="Uva Itália Sem Semente">Uva Itália (Sem Semente)</option>
-                                    <option value="Misto Morango e Uva">Misto (Morango e Uva)</option>
-                                </select>
-                            </div>
-                            <div class="variation-field">
-                                <label>Porção de Entrega</label>
-                                <select class="variation-select tamanho" onchange="alterarPrecoCard(this)">
-                                    <option value="Taça Individual" data-price="16.00">Taça Individual — R$ 16,00</option>
-                                    <option value="Travessa Família" data-price="55.00">Travessa Família — R$ 55,00</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="product-meta">
-                            <span class="product-price">R$ 16,00</span>
-                            <button class="btn-card-order" onclick="adicionarCardAoCarrinho('prod-6', 'Bombom Aberto')">Adicionar ao Pedido</button>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </section>
 
-        <div class="side-banner-bg side-banner-right"></div>
+            <div class="product-card" id="prod-3">
+                <div class="product-img-wrapper">
+                    <div class="card-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C79A63"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <img src="brownies.jpg" alt="Brownie Gourmet" class="product-img" loading="lazy">
+                </div>
+                <div class="product-info-box">
+                    <h3 class="product-title">Brownie Gourmet</h3>
+                    <p class="product-desc">Intenso sabor de chocolate, textura super cremosa por dentro e aquela casquinha craquelada perfeita por fora.</p>
+                    
+                    <div class="product-variations">
+                        <div class="variation-field">
+                            <label>Cobertura / Recheio</label>
+                            <select class="variation-select sabor">
+                                <option value="Tradicional Puro">Tradicional Puro (Sem Recheio)</option>
+                                <option value="Com Recheio de Nutella">Recheio de Nutella</option>
+                                <option value="Com Recheio de Doce de Leite">Recheio de Doce de Leite</option>
+                            </select>
+                        </div>
+                        <div class="variation-field">
+                            <label>Porção / Embalagem</label>
+                            <select class="variation-select tamanho" onchange="alterarPrecoCard(this)">
+                                <option value="Pedaço Individual" data-price="10.00">Pedaço Individual — R$ 10,00</option>
+                                <option value="Caixa Presente c/ 4 un." data-price="42.00">Caixa Presente c/ 4 un. — R$ 42,00</option>
+                            </select>
+                        </div>
+                    </div>
 
-    </div> <section class="about-section" id="sobre-nos">
+                    <div class="product-meta">
+                        <span class="product-price">R$ 10,00</span>
+                        <button class="btn-card-order" onclick="adicionarCardAoCarrinho('prod-3', 'Brownie Gourmet')">Adicionar ao Pedido</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" id="prod-4">
+                <div class="product-img-wrapper">
+                    <div class="card-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C79A63"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <img src="bolodepote.jpg" alt="Bolo de Pote" class="product-img" loading="lazy">
+                </div>
+                <div class="product-info-box">
+                    <h3 class="product-title">Bolo de Pote</h3>
+                    <p class="product-desc">Massa super molhadinha intercalada com recheios artesanais cremosos de dar água na boca.</p>
+                    
+                    <div class="product-variations">
+                        <div class="variation-field">
+                            <label>Sabor do Bolo</label>
+                            <select class="variation-select sabor">
+                                <option value="Ninho com Morango">Leite Ninho com Morango</option>
+                                <option value="Cenoura com Brigadeiro">Cenoura com Brigadeiro</option>
+                                <option value="Red Velvet Premium">Red Velvet Premium</option>
+                            </select>
+                        </div>
+                        <div class="variation-field">
+                            <label>Tamanho do Pote</label>
+                            <select class="variation-select tamanho" onchange="alterarPrecoCard(this)">
+                                <option value="Pote Padrão 250g" data-price="12.00">Pote Padrão 250g — R$ 12,00</option>
+                                <option value="Pote Família 400g" data-price="18.00">Pote Família 400g — R$ 18,00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="product-meta">
+                        <span class="product-price">R$ 12,00</span>
+                        <button class="btn-card-order" onclick="adicionarCardAoCarrinho('prod-4', 'Bolo de Pote')">Adicionar ao Pedido</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" id="prod-5">
+                <div class="product-img-wrapper">
+                    <div class="card-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C79A63"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <img src="supresademorango2.jpg" alt="Surpresa de Morango" class="product-img" loading="lazy">
+                    <img src="surpresademorango1.jpg" alt="Surpresa de Morango" class="product-img img-crossfade" loading="lazy">
+                </div>
+                <div class="product-info-box">
+                    <h3 class="product-title">Surpresa de Morango</h3>
+                    <p class="product-desc">Um morango inteiro, fresco e suculento, envolto por um brigadeiro nobre e casquinha fina de chocolate.</p>
+                    
+                    <div class="product-variations">
+                        <div class="variation-field">
+                            <label>Massa Envolvente</label>
+                            <select class="variation-select sabor">
+                                <option value="Massa de Leite Ninho">Massa Pura de Leite Ninho</option>
+                                <option value="Massa de Brigadeiro Belga">Massa de Brigadeiro Tradicional Belga</option>
+                            </select>
+                        </div>
+                        <div class="variation-field">
+                            <label>Quantidade</label>
+                            <select class="variation-select tamanho" onchange="alterarPrecoCard(this)">
+                                <option value="Unidade Especial" data-price="8.50">Unidade Especial — R$ 8,50</option>
+                                <option value="Caixa c/ 4 unidades" data-price="32.00">Caixa Degustação c/ 4 un. — R$ 32,00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="product-meta">
+                        <span class="product-price">R$ 8,50</span>
+                        <button class="btn-card-order" onclick="adicionarCardAoCarrinho('prod-5', 'Surpresa de Morango')">Adicionar ao Pedido</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" id="prod-6">
+                <div class="product-img-wrapper">
+                    <div class="card-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#C79A63"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.5 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <img src="bombomaberto.jpg" alt="Bombom Aberto" class="product-img" loading="lazy">
+                </div>
+                <div class="product-info-box">
+                    <h3 class="product-title">Bombom Aberto</h3>
+                    <p class="product-desc">A sofisticação servida na taça: creme belga aveludado, frutas frescas fatiadas e ganache artesanal de chocolate nobre puro.</p>
+                    
+                    <div class="product-variations">
+                        <div class="variation-field">
+                            <label>Fruta Selecionada</label>
+                            <select class="variation-select sabor">
+                                <option value="Morangos Frescos">Morangos Frescos</option>
+                                <option value="Uva Itália Sem Semente">Uva Itália (Sem Semente)</option>
+                                <option value="Misto Morango e Uva">Misto (Morango e Uva)</option>
+                            </select>
+                        </div>
+                        <div class="variation-field">
+                            <label>Porção de Entrega</label>
+                            <select class="variation-select tamanho" onchange="alterarPrecoCard(this)">
+                                <option value="Taça Individual" data-price="16.00">Taça Individual — R$ 16,00</option>
+                                <option value="Travessa Família" data-price="55.00">Travessa Família — R$ 55,00</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="product-meta">
+                        <span class="product-price">R$ 16,00</span>
+                        <button class="btn-card-order" onclick="adicionarCardAoCarrinho('prod-6', 'Bombom Aberto')">Adicionar ao Pedido</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="about-section" id="sobre-nos">
         <div class="about-container">
             <div class="about-border-box">
                 <div class="about-decor-icon">
